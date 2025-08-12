@@ -3,10 +3,10 @@ package main
 import (
 	"log"
 
-	"go_backend/internal/config"
-	"go_backend/internal/handlers"
-	"go_backend/pkg/database"
-	"go_backendinternal/middleware"
+	"github.com/liangshaoze/ops-platform/go-backend/internal/config"
+	"github.com/liangshaoze/ops-platform/go-backend/internal/handlers"
+	"github.com/liangshaoze/ops-platform/go-backend/internal/middleware"
+	"github.com/liangshaoze/ops-platform/go-backend/internal/pkg/database"
 
 	"github.com/gin-gonic/gin"
 )

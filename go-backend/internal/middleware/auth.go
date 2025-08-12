@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/liangshaoze/ops-platform/go_backend/internal/internal/config"
+	"github.com/liangshaoze/ops-platform/go-backend/internal/config"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"

@@ -1,50 +1,44 @@
-/*
- * @Author: 12866449444136360 liangsz@aliyun.com
- * @Date: 2025-08-12 14:00:46
- * @LastEditors: 12866449444136360 liangsz@aliyun.com
- * @LastEditTime: 2025-08-12 14:02:41
- * @FilePath: \自学项目\go-backend\internal\config\config.go
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 package config
 
 import (
 	"log"
+	"os"
 
-	"github.com/spf13/viper"
+	"github.com/joho/godotenv"
 )
 
 type Config struct {
-	Env        string `mapstructure:"ENV"`
-	ServerAddr string `mapstructure:"SERVER_ADDR"`
-	DBHost     string `mapstructure:"DB_HOST"`
-	DBPort     string `mapstructure:"DB_PORT"`
-	DBUser     string `mapstructure:"DB_USER"`
-	DBPassword string `mapstructure:"DB_PASSWORD"`
-	DBName     string `mapstructure:"DB_NAME"`
-	JWTSecret  string `mapstructure:"JWT_SECRET"`
+	DBHost     string
+	DBPort     string
+	DBUser     string
+	DBPassword string
+	DBName     string
+	JWTSecret  string
 }
 
 var AppConfig Config
 
-func LoadConfig() {
-	viper.SetConfigFile(".env")
-	viper.AutomaticEnv()
-
-	if err := viper.ReadInConfig(); err != nil {
+func LoadConfig() error {
+	// 加载.env文件
+	if err := godotenv.Load(); err != nil {
 		log.Println("No .env file found, using environment variables")
 	}
 
-	if err := viper.Unmarshal(&AppConfig); err != nil {
-		log.Fatalf("Unable to decode into struct: %v", err)
+	AppConfig = Config{
+		DBHost:     getEnv("DB_HOST", "10.10.24.129"),
+		DBPort:     getEnv("DB_PORT", "3306"),
+		DBUser:     getEnv("DB_USER", "root"),
+		DBPassword: getEnv("DB_PASSWORD", "nlds#2024"),
+		DBName:     getEnv("DB_NAME", "test"),
+		JWTSecret:  getEnv("JWT_SECRET", "your-secret-key"),
 	}
 
-	// 设置默认值
-	if AppConfig.ServerAddr == "" {
-		AppConfig.ServerAddr = ":8080"
-	}
+	return nil
+}
 
-	if AppConfig.Env == "" {
-		AppConfig.Env = "development"
+func getEnv(key, defaultValue string) string {
+	if value, exists := os.LookupEnv(key); exists {
+		return value
 	}
+	return defaultValue
 }

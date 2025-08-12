@@ -1,8 +1,8 @@
 /*
  * @Author: 12866449444136360 liangsz@aliyun.com
  * @Date: 2025-08-12 14:01:42
- * @LastEditors: 12866449444136360 liangsz@aliyun.com
- * @LastEditTime: 2025-08-12 15:00:02
+ * @LastEditors: liangsz@aliyun.com liangsz@aliyun.com
+ * @LastEditTime: 2025-08-12 15:15:51
  * @FilePath: \自学项目\go-backend\internal\middleware\auth.go
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"strings"
 
-	"go_backend/internal/config"
+	"github.com/liangshaoze/ops-platform/go_backend/internal/internal/config"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"

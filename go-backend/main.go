@@ -6,7 +6,7 @@ import (
 	"github.com/liangshaoze/ops-platform/go-backend/internal/config"
 	"github.com/liangshaoze/ops-platform/go-backend/internal/handlers"
 	"github.com/liangshaoze/ops-platform/go-backend/internal/middleware"
-	"github.com/liangshaoze/ops-platform/go-backend/internal/pkg/database"
+	"github.com/liangshaoze/ops-platform/go-backend/pkg/database"
 
 	"github.com/gin-gonic/gin"
 )

@@ -2,7 +2,7 @@
  * @Author: 12866449444136360 liangsz@aliyun.com
  * @Date: 2025-08-12 14:01:26
  * @LastEditors: liangsz@aliyun.com liangsz@aliyun.com
- * @LastEditTime: 2025-08-12 15:28:08
+ * @LastEditTime: 2025-08-12 15:32:43
  * @FilePath: \自学项目\go-backend\internal\handlers\auth.go
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */

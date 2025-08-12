@@ -1,4 +1,4 @@
-module github.com/yourname/ops-auth
+module github.com/liangshaoze/ops-platform/go-backend
 
 go 1.24.0
 
